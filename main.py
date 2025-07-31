@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonfy
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
@@ -8,7 +8,7 @@ def notificar():
     data=request.json
     nombre = data.get("nombre", "desconocido")
     print(f" Notificando a {nombre}...")
-    return jsonfy({"notificacion": f"Se notificó a {nombre} exitosamente."})
+    return jsonify({"notificacion": f"Se notificó a {nombre} exitosamente."})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', por =10000)
